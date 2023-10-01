@@ -1,4 +1,4 @@
-export default function Expenses() {
+export default function NotFound() {
   return (
     <main style={{ padding: "1rem" }}>
       <p>There's nothing here!</p>

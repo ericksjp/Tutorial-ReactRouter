@@ -1,6 +1,6 @@
-let invoice: { name: string; number: number; amount: string; due: string };
+type invoice = { name: string; number: number; amount: string; due: string };
 
-const invoicesArray: (typeof invoice)[] = [
+const invoicesArray: invoice[] = [
   {
     name: "Invoice 1 - New York",
     number: 12345,
@@ -63,6 +63,10 @@ const invoicesArray: (typeof invoice)[] = [
   },
 ];
 
-export function getInvoices(){
+export function getInvoices(): invoice[]{
     return invoicesArray;
+}
+
+export function getInvoice(number: number): invoice | undefined{
+  return invoicesArray.find((invoice) => invoice.number === number) || undefined;
 }
